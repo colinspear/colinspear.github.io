@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Count files by type and directory - Brainwash</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Count files by type and directory" />
+<meta property="og:description" content="Using the command line to count stuff" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://colinspear.github.io/posts/count-files-by-type-and-directory/" />
+<meta property="article:published_time" content="2020-12-17T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-12-17T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Count files by type and directory"/>
+<meta name="twitter:description" content="Using the command line to count stuff"/>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" media="screen" href="https://colinspear.github.io/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://colinspear.github.io/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://colinspear.github.io/css/custom.css" />
+	<link rel="stylesheet" type="text/css" href="https://colinspear.github.io/css/dark.css"  />
+	<link rel="stylesheet" type="text/css" href="https://colinspear.github.io/css/custom-dark.css"  />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://colinspear.github.io/js/main.js"></script>
+	<script src="https://colinspear.github.io/js/abc.js"></script>
+	<script src="https://colinspear.github.io/js/xyz.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<base href="https://colinspear.github.io/">
+	<h1 class="site-title"><a href="https://colinspear.github.io/">Brainwash</a></h1>
+	<div class="site-description"><h2>Scrubbing my brain clean to think again</h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/vividvilla/ezhil" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/gohugoio" title="Twitter"><i data-feather="twitter"></i></a><a href="https://www.linkedin.com/in/colinspear/" title="LinkedIn"><i data-feather="linkedin"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="../../">Home</a>
+			</li>
+			
+			<li>
+				<a href="../../posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="../../about">About</a>
+			</li>
+			
+			<li>
+				<a href="../../tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Count files by type and directory</h1>
+			<div class="meta">Posted at &mdash; Dec 17, 2020</div>
+		</div>
+
+		<div class="markdown">
+			<p>I have been working on updating a 15 year old data collection / ETL process in the last weeks. As part of the planning process, I wanted to know how many people are using the data we collect<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>. Sure, I could <em>ask</em> people, but how does that help me sharpen my skills a Data Wizard<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>.</p>
+<p>At my work, our shared server is organized by analyst (i.e. each of the subfolders to the team&rsquo;s main directory is the name of an employee). Since our data is stored in a SQL database and you need to write a query to get the data, I can get a quick and dirty look at who is using this data and how often. I can simply look in everybody&rsquo;s folder for <code>.sql</code> files that contain a distinct word or phrase that will identify my database.</p>
+<p>To do this efficiently at the command line, I used a couple of built in bash functions (<code>awk</code>, <code>sort</code> and <code>uniq</code>) and the speedy version of another: <code>ripgrep</code> (<code>grep</code>). They aren&rsquo;t exactly faster versions as they don&rsquo;t mimic the behavior of the built-ins, but they accomplish many of the same tasks. Most importantly for me, it means I can do this task without having to wait around for a day for my code to run.</p>
+<p>The basic procedure is the following:</p>
+<ol>
+<li>Search through each directory for <code>.sql</code> files.</li>
+<li>Check whether those files contain the pattern I am looking for.</li>
+<li>If so, add the file path to my list.</li>
+<li>(optional) Save the list to a file.</li>
+<li>Split the file paths to get just the names of people who have used the data and saved their query.</li>
+<li>Sort and count the number of files.</li>
+</ol>
+<p>I&rsquo;m going to do this in two lines which could be chained together using <code>xargs</code> (also left to the reader) or made into a function. I may consider the latter if it turns out to be something useful down the line as well. The first command I used makes a list of all the files I am interested in and save it as the text file <code>MyQueries.txt</code>:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">rg &#39;dbo.CoolTable&#39; -g &#39;!BadDirectory/*&#39; -g &#39;*.sql&#39; -l -i &gt; /Path/to/MyQueries.txt
+</code></pre></div><p>Here&rsquo;s what each part of that command does:</p>
+<ul>
+<li><code>rg 'dbo.CoolTable'</code>: uses ripgrep to search for <code>dbo.CoolTable</code>. The pattern you give is a regular expression (unless you speccify otherwise with the <code>-F</code> or <code>--fixed-strings</code> flag), so you can as fancy as you want with your regex.</li>
+<li><code>-g '!BadDirectory/*'</code>: this is the glob command which allows you to tell ripgrep what directories to look in or avoid in its search. The <code>!</code> in front of the directory name tells ripgrep to exclude that directory. Glob flags can be used more than once (which brings us to our next piece):</li>
+<li><code>-g '*.sql'</code>: another glob flag to search only for SQL files. This can also be specified with the <code>--type</code> (<code>-t</code>) flag and the file type you are interested in (<code>sql</code> in my case). I went this route because the latter flag wasn&rsquo;t working for me.</li>
+<li><code>-l -i</code>: <code>-l</code> (<code>--files-with-matches</code>) returns the file path where at least one match was found and <code>-i</code> (<code>--ignore-case</code>) makes your pattern search case insensitive. Since SQL is case-insensitive, using this means I&rsquo;ll get files where people use <code>dbo.cooltable</code>, <code>DBO.COOLTABLE</code> and everything in between.</li>
+<li><code>&gt; /Path/to/MyQueries.txt</code>: finally I redirect the output from ripgrep to the textfile which I will analyze with my next command.</li>
+</ul>
+<p>The second command takes the list of files I found, parses it for my colleagues' names and counts how many files there are in each of their directories:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">awk -F &#34;/&#34; &#39;{print $1}&#39; /Path/to/MyQueries.txt | sort | uniq -c &gt; query-count.txt
+</code></pre></div><p>Awk is actually its <a href="https://en.wikipedia.org/wiki/AWK">very own programming language</a> (!) that is mostly used for extracting data from text. There is a whole lot to it, so if you are interested, go spend the day <a href="https://www.gnu.org/software/gawk/manual/gawk.html">on the documentation</a>. All I&rsquo;m going to do for you here is explain my little command :). Again, bit by bit:</p>
+<ul>
+<li><code>awk -F &quot;/&quot;</code>: calls awk and specifies a delimiter to use to parse your data. Since I am dealing with file paths, I use the forward (or is it backward?) slash.</li>
+<li><code>'{print $1}'</code> tells awk to return the first element of my parsed line. Since the file paths I have in my file go something like <code>NameOfColleague/subdir/*/sql_file.sql</code> with the name of my coworker always in the first position, this gives me one instance of each person&rsquo;s name for each query they have written to my database.</li>
+<li><code>/Path/to/MyQueries.txt</code>: tells <code>awk</code> what file to operate on.</li>
+<li><code>| sort | uniq -c</code>: finally, the resulting list of names is sorted and counted! What I really want only the number of times each name appears in my list, so you would think <code>sort</code> wouldn&rsquo;t be necessary. However, <code>uniq</code> only detects repeats in <em>adjacent</em> lines, so the list has to be sorted with the <code>sort</code> command before passing it to <code>uniq</code>. <code>-c</code> tells <code>uniq</code> to return a count of unique occurences it finds.</li>
+</ul>
+<p>And there you have it! A long explanation of a short series of commands that will give you the number of files that contain a text snippet of interest, grouped by directory.</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>I also want to know which features folks are using which I may also try to do at the command line, but <a href="https://www.reddit.com/r/physicsmemes/comments/8wil0z/the_meme_is_left_as_an_exercise_for_the_reader/">that exercise is currently left to the reader</a>. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>I am just kidding here in case you were wondering. Usually talking to people gets us to the answer to a question like this much more quickly and effectively than any silly computer wizardry. <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="../../tags/command-line">command line</a></li>
+								
+								<li><a href="../../tags/grep">grep</a></li>
+								
+								<li><a href="../../tags/awk">awk</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div>
+		<div id="disqus_thread"></div>
+<script type="text/javascript">
+	(function () {
+		
+		
+		if (window.location.hostname == "localhost")
+			return;
+
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		var disqus_shortname = 'localhost';
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+		Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Colin Spear, 2020 |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-123-45', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

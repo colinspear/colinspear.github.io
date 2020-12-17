@@ -6,7 +6,17 @@
     <description>Recent content on Brainwash</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© Colin Spear, 2020</copyright><atom:link href="https://colinspear.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>© Colin Spear, 2020</copyright>
+    <lastBuildDate>Thu, 17 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://colinspear.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Count files by type and directory</title>
+      <link>https://colinspear.github.io/posts/count-files-by-type-and-directory/</link>
+      <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://colinspear.github.io/posts/count-files-by-type-and-directory/</guid>
+      <description>Using the command line to count stuff</description>
+    </item>
+    
     <item>
       <title>About</title>
       <link>https://colinspear.github.io/about/</link>
