@@ -33,6 +33,11 @@
   </url>
   
   <url>
+    <loc>https://colinspear.github.io/about/</loc>
+    <lastmod>2021-02-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://colinspear.github.io/tags/awk/</loc>
     <lastmod>2020-12-17T00:00:00+00:00</lastmod>
   </url>
@@ -45,11 +50,6 @@
   <url>
     <loc>https://colinspear.github.io/tags/grep/</loc>
     <lastmod>2020-12-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://colinspear.github.io/about/</loc>
-    <lastmod>2019-11-25T00:00:00+00:00</lastmod>
   </url>
   
 </urlset>

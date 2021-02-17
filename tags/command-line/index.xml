@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>command line on Brainwash</title>
+    <title>command line on Colin Spear</title>
     <link>https://colinspear.github.io/tags/command-line/</link>
-    <description>Recent content in command line on Brainwash</description>
+    <description>Recent content in command line on Colin Spear</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© Colin Spear, 2020</copyright>
+    <copyright>© Colin Spear, 2021</copyright>
     <lastBuildDate>Wed, 17 Feb 2021 12:49:31 -0800</lastBuildDate><atom:link href="https://colinspear.github.io/tags/command-line/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Move and rename all files in a folder</title>

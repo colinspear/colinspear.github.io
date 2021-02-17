@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>awk on Brainwash</title>
+    <title>awk on Colin Spear</title>
     <link>https://colinspear.github.io/tags/awk/</link>
-    <description>Recent content in awk on Brainwash</description>
+    <description>Recent content in awk on Colin Spear</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© Colin Spear, 2020</copyright>
+    <copyright>© Colin Spear, 2021</copyright>
     <lastBuildDate>Thu, 17 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://colinspear.github.io/tags/awk/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Count files by type and directory</title>
