@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Move and rename all files in a folder - Brainwash</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Move and rename all files in a folder" />
+<meta property="og:description" content="I wanted to move and rename a bunch of excel files in a folder. This is one way to do it from the command line, copying into a directory in the parent folder." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://colinspear.github.io/posts/cl_move_and_rename_files/" />
+<meta property="article:published_time" content="2021-02-17T12:49:31-08:00" />
+<meta property="article:modified_time" content="2021-02-17T12:49:31-08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Move and rename all files in a folder"/>
+<meta name="twitter:description" content="I wanted to move and rename a bunch of excel files in a folder. This is one way to do it from the command line, copying into a directory in the parent folder."/>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" media="screen" href="https://colinspear.github.io/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://colinspear.github.io/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://colinspear.github.io/css/custom.css" />
+	<link rel="stylesheet" type="text/css" href="https://colinspear.github.io/css/dark.css"  />
+	<link rel="stylesheet" type="text/css" href="https://colinspear.github.io/css/custom-dark.css"  />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://colinspear.github.io/js/main.js"></script>
+	<script src="https://colinspear.github.io/js/abc.js"></script>
+	<script src="https://colinspear.github.io/js/xyz.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<base href="https://colinspear.github.io/">
+	<h1 class="site-title"><a href="https://colinspear.github.io/">Brainwash</a></h1>
+	<div class="site-description"><h2>Scrubbing my brain clean to think again</h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/colinspear" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/colinspear" title="Twitter"><i data-feather="twitter"></i></a><a href="https://www.linkedin.com/in/colinspear/" title="LinkedIn"><i data-feather="linkedin"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="../../">Home</a>
+			</li>
+			
+			<li>
+				<a href="../../posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="../../about">About</a>
+			</li>
+			
+			<li>
+				<a href="../../tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Move and rename all files in a folder</h1>
+			<div class="meta">Posted at &mdash; Feb 17, 2021</div>
+		</div>
+
+		<div class="markdown">
+			<p>I wanted to move and rename a bunch of excel files in a folder. This is one way to do it from the command line, copying into a directory in the parent folder. I did it this way to be able to <code>rm -r old_folder</code> after copying my files to the new folder. You could modify it to rename them in place, but I&rsquo;ve accidentally <code>rm -rf</code>ed enough things to get nervous doing it that way.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">for f in *; do mv &#34;$f&#34; &#34;../new_folder/old_$f; done&#34;
+</code></pre></div><p>And just for good measure (and to include a note about string substitution), if all of you files were of the form <code>file.suffix</code> and you wanted the <code>old</code> at the end of the new files it would go like this:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">for f in *; do mv &#34;$f&#34; &#34;../new_folder/${f/.suffix/_old.suffix}&#34;; done&#34;
+</code></pre></div><p>This will do the same as the first example, replacing <code>.suffix</code> with <code>_old.suffix</code>. So <code>file.suffix</code> becomes <code>file_old.suffix</code>. In general, the format is:</p>
+<p><code>${parameter/pattern/string}</code></p>
+<p>Where <code>parameter</code> is the thing you want to change, <code>pattern</code> is a string or regular expression and <code>string</code> is what you want to replace it with.</p>
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="../../tags/bash">bash</a></li>
+								
+								<li><a href="../../tags/command-line">command line</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div>
+		</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Colin Spear, 2020 |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-123-45', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

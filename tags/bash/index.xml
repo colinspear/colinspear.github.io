@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Brainwash</title>
-    <link>https://colinspear.github.io/</link>
-    <description>Recent content on Brainwash</description>
+    <title>bash on Brainwash</title>
+    <link>https://colinspear.github.io/tags/bash/</link>
+    <description>Recent content in bash on Brainwash</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Colin Spear, 2020</copyright>
-    <lastBuildDate>Wed, 17 Feb 2021 12:49:31 -0800</lastBuildDate><atom:link href="https://colinspear.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 17 Feb 2021 12:49:31 -0800</lastBuildDate><atom:link href="https://colinspear.github.io/tags/bash/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Move and rename all files in a folder</title>
       <link>https://colinspear.github.io/posts/cl_move_and_rename_files/</link>
@@ -24,16 +24,6 @@
       
       <guid>https://colinspear.github.io/posts/count-files-by-type-and-directory/</guid>
       <description>Using the command line to count stuff</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://colinspear.github.io/about/</link>
-      <pubDate>Mon, 25 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://colinspear.github.io/about/</guid>
-      <description>Howdy &amp;ndash; thanks for checking out my website!
-I&amp;rsquo;ve done a lot of things over the years, but have been gradually moving closer and closer to the data.</description>
     </item>
     
   </channel>
