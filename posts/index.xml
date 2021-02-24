@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Colin Spear, 2021</copyright>
-    <lastBuildDate>Wed, 17 Feb 2021 12:49:31 -0800</lastBuildDate><atom:link href="https://colinspear.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 Feb 2021 08:28:54 -0800</lastBuildDate><atom:link href="https://colinspear.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Change your file permissions, baby!</title>
+      <link>https://colinspear.github.io/posts/chmod_codes/</link>
+      <pubDate>Wed, 24 Feb 2021 08:28:54 -0800</pubDate>
+      
+      <guid>https://colinspear.github.io/posts/chmod_codes/</guid>
+      <description>Knowing how to set file permissions is very useful (for a much more thorough primer than I provied here, see this article).</description>
+    </item>
+    
     <item>
       <title>Move and rename all files in a folder</title>
       <link>https://colinspear.github.io/posts/cl_move_and_rename_files/</link>
