@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Colin Spear</title>
-    <link>/</link>
+    <link>https://colinspear.github.io/</link>
     <description>Recent content on Colin Spear</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Colin Spear, 2021</copyright>
-    <lastBuildDate>Wed, 17 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 17 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://colinspear.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Change git branch (master to main)</title>
-      <link>/posts/change-master-to-main/</link>
+      <link>https://colinspear.github.io/posts/change-master-to-main/</link>
       <pubDate>Wed, 17 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>/posts/change-master-to-main/</guid>
+      <guid>https://colinspear.github.io/posts/change-master-to-main/</guid>
       <description>Here&amp;rsquo;s another thing I&amp;rsquo;ve googled enough times to just put it somewhere I know.
 First, rename your local branch:
 ❯ git branch -m master main Then you can check that it worked:</description>
@@ -21,47 +21,47 @@ First, rename your local branch:
     
     <item>
       <title>Flask wordcount app</title>
-      <link>/posts/simple_flask_app/</link>
+      <link>https://colinspear.github.io/posts/simple_flask_app/</link>
       <pubDate>Thu, 11 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>/posts/simple_flask_app/</guid>
+      <guid>https://colinspear.github.io/posts/simple_flask_app/</guid>
       <description>I made a simple flask app that takes a URL as input and returns a table and chart of the most used words on the site.</description>
     </item>
     
     <item>
       <title>Change your file permissions, baby!</title>
-      <link>/posts/chmod_codes/</link>
+      <link>https://colinspear.github.io/posts/chmod_codes/</link>
       <pubDate>Wed, 24 Feb 2021 08:28:54 -0800</pubDate>
       
-      <guid>/posts/chmod_codes/</guid>
+      <guid>https://colinspear.github.io/posts/chmod_codes/</guid>
       <description>Knowing how to set file permissions is very useful (for a much more thorough primer than I provied here, see this article).</description>
     </item>
     
     <item>
       <title>Move and rename all files in a folder</title>
-      <link>/posts/cl_move_and_rename_files/</link>
+      <link>https://colinspear.github.io/posts/cl_move_and_rename_files/</link>
       <pubDate>Wed, 17 Feb 2021 12:49:31 -0800</pubDate>
       
-      <guid>/posts/cl_move_and_rename_files/</guid>
+      <guid>https://colinspear.github.io/posts/cl_move_and_rename_files/</guid>
       <description>I wanted to move and rename a bunch of excel files in a folder. This is one way to do it from the command line, copying into a directory in the parent folder.</description>
     </item>
     
     <item>
       <title>About</title>
-      <link>/about/</link>
+      <link>https://colinspear.github.io/about/</link>
       <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>/about/</guid>
+      <guid>https://colinspear.github.io/about/</guid>
       <description>Hello!
 I am Colin Spear, a baker turned economist turned all around data geek. I&amp;rsquo;ve had an affinity for numbers and math as long as I can remember and am a methodological libertine, having cut my teeth in the causal inference and prediction of econometrics and constrained optimization of economic theory, later deepening those statistical underpinnings through PhD coursework and in recent years devleoping an interest in machine learning and software development.</description>
     </item>
     
     <item>
       <title>Count files by type and directory</title>
-      <link>/posts/count-files-by-type-and-directory/</link>
+      <link>https://colinspear.github.io/posts/count-files-by-type-and-directory/</link>
       <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>/posts/count-files-by-type-and-directory/</guid>
+      <guid>https://colinspear.github.io/posts/count-files-by-type-and-directory/</guid>
       <description>Using the command line to count stuff</description>
     </item>
     
