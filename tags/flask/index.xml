@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>flask on Colin Spear</title>
-    <link>https://main.d1yldk8vibgm3z.amplifyapp.com/tags/flask/</link>
+    <link>/tags/flask/</link>
     <description>Recent content in flask on Colin Spear</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Colin Spear, 2021</copyright>
-    <lastBuildDate>Thu, 11 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://main.d1yldk8vibgm3z.amplifyapp.com/tags/flask/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 11 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/flask/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Flask wordcount app</title>
-      <link>https://main.d1yldk8vibgm3z.amplifyapp.com/posts/simple_flask_app/</link>
+      <link>/posts/simple_flask_app/</link>
       <pubDate>Thu, 11 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://main.d1yldk8vibgm3z.amplifyapp.com/posts/simple_flask_app/</guid>
+      <guid>/posts/simple_flask_app/</guid>
       <description>I made a simple flask app that takes a URL as input and returns a table and chart of the most used words on the site.</description>
     </item>
     

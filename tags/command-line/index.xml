@@ -2,36 +2,36 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>command-line on Colin Spear</title>
-    <link>https://main.d1yldk8vibgm3z.amplifyapp.com/tags/command-line/</link>
+    <link>/tags/command-line/</link>
     <description>Recent content in command-line on Colin Spear</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Colin Spear, 2021</copyright>
-    <lastBuildDate>Wed, 24 Feb 2021 08:28:54 -0800</lastBuildDate><atom:link href="https://main.d1yldk8vibgm3z.amplifyapp.com/tags/command-line/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 Feb 2021 08:28:54 -0800</lastBuildDate><atom:link href="/tags/command-line/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Change your file permissions, baby!</title>
-      <link>https://main.d1yldk8vibgm3z.amplifyapp.com/posts/chmod_codes/</link>
+      <link>/posts/chmod_codes/</link>
       <pubDate>Wed, 24 Feb 2021 08:28:54 -0800</pubDate>
       
-      <guid>https://main.d1yldk8vibgm3z.amplifyapp.com/posts/chmod_codes/</guid>
+      <guid>/posts/chmod_codes/</guid>
       <description>Knowing how to set file permissions is very useful (for a much more thorough primer than I provied here, see this article).</description>
     </item>
     
     <item>
       <title>Move and rename all files in a folder</title>
-      <link>https://main.d1yldk8vibgm3z.amplifyapp.com/posts/cl_move_and_rename_files/</link>
+      <link>/posts/cl_move_and_rename_files/</link>
       <pubDate>Wed, 17 Feb 2021 12:49:31 -0800</pubDate>
       
-      <guid>https://main.d1yldk8vibgm3z.amplifyapp.com/posts/cl_move_and_rename_files/</guid>
+      <guid>/posts/cl_move_and_rename_files/</guid>
       <description>I wanted to move and rename a bunch of excel files in a folder. This is one way to do it from the command line, copying into a directory in the parent folder.</description>
     </item>
     
     <item>
       <title>Count files by type and directory</title>
-      <link>https://main.d1yldk8vibgm3z.amplifyapp.com/posts/count-files-by-type-and-directory/</link>
+      <link>/posts/count-files-by-type-and-directory/</link>
       <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://main.d1yldk8vibgm3z.amplifyapp.com/posts/count-files-by-type-and-directory/</guid>
+      <guid>/posts/count-files-by-type-and-directory/</guid>
       <description>Using the command line to count stuff</description>
     </item>
     
